@@ -6,10 +6,12 @@
     <?php
     $a = $_POST['tahti'];
     $b = 1;
-    do {
-        echo $b * "*";
+    do {        
         $b++;
-        echo "</br>"
+        echo "* ";
+        for{
+            echo "</br>";
+        };
     } while ($b <= $a);
     ?>
 </html>
