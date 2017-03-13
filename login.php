@@ -11,11 +11,8 @@
     <form method="post" action="admin.php">
         <p>Tunnus: <input type="text" name="login"></p>
         <p>Salasana: <input type="password" name="password"</p>
+        <input type="submit" name="Kirjaudu sisään">
     </form>
-    <?php
-        $login = "tunnus";
-        $pass = "salasana123";
-        
-    ?>
+    
 </body>
 </html>

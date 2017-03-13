@@ -2,9 +2,6 @@
 <?php
 setcookie("login", $_POST['login'], time()+60*10);
 setcookie("password", $_POST['password'], time()+60*10);
-if(!isset($_POST['login']) || !isset($_POST['password']) ){
-    echo "<h1>Tunnus ja salasana vaaditaan</h1>";
-}
     
 ?>
 <html lang="">
@@ -15,6 +12,12 @@ if(!isset($_POST['login']) || !isset($_POST['password']) ){
 </head>
 
 <body>
-    
+<?php
+if(empty($_POST['login']) || empty($_POST['password']) ){
+    echo "<h1>Tunnus ja salasana vaaditaan</h1>";
+}
+        $login = "tunnus";
+        $pass = "salasana123";
+?>
 </body>
 </html>
