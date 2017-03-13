@@ -5,13 +5,10 @@
     </form>
     <?php
     $a = $_POST['tahti'];
-    $b = 1;
-    do {        
+    $b = 0;
+    while ($b <= $a) {        
         $b++;
         echo "* ";
-        for{
-            echo "</br>";
-        };
-    } while ($b <= $a);
+    } 
     ?>
 </html>
