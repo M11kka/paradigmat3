@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
-setcookie("login", $_POST['login'], time()+60*10);
-setcookie("password", $_POST['password'], time()+60*10);
-    
+session_start();
 ?>
 <html lang="">
 <head>
@@ -13,11 +11,22 @@ setcookie("password", $_POST['password'], time()+60*10);
 
 <body>
 <?php
-if(empty($_POST['login']) || empty($_POST['password']) ){
-    echo "<h1>Tunnus ja salasana vaaditaan</h1>";
-}
+    function access (){
         $login = "tunnus";
         $pass = "salasana123";
+        if(($_POST['login'] == $login) && ($_POST['password'] == $pass)) {
+           $_SESSION[access] = "granted"; 
+        } else {
+            $_SESSION[access] = "denied";
+        }
+    }
+    function tarkistus (){
+        if ($_SESSION[access] = "denied"){
+            echo "<h1>Sisäänkirjautuminen epäonnistui<h1>";
+            echo "<p><a href="login.php">Palaa takaisin etusivulle</a></p>";
+        }
+    }
+    
 ?>
 </body>
 </html>
