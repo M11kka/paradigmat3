@@ -15,18 +15,25 @@ session_start();
         $login = "tunnus";
         $pass = "salasana123";
         if(($_POST['login'] == $login) && ($_POST['password'] == $pass)) {
-           $_SESSION[access] = "granted"; 
+           $_SESSION["access"] = "granted";
+            echo "<h1>Onneksi olkoon, pääsit sisään!<h1>";
+            echo "<p><a href='admin2.php'>Jatka eteenpäin</a></p>";
         } else {
-            $_SESSION[access] = "denied";
-        }
-    }
-    function tarkistus (){
-        if ($_SESSION[access] = "denied"){
             echo "<h1>Sisäänkirjautuminen epäonnistui<h1>";
-            echo "<p><a href="login.php">Palaa takaisin etusivulle</a></p>";
+            echo "<p><a href='login.php'>Palaa takaisin etusivulle</a></p>";
         }
     }
-    
+
+    function tarkistus (){
+        if (!isset($_SESSION["access"])){
+            echo "<h1>Sisäänkirjautuminen epäonnistui<h1>";
+            echo "<p><a href='login.php'>Palaa takaisin etusivulle</a></p>";
+        } else {
+            echo "<h1>Onneksi olkoon, pääsit sisään!<h1>";
+            echo "<p><a href='admin2.php'>Jatka eteenpäin</a></p>";
+        }
+    }
+    access();    
 ?>
 </body>
 </html>
