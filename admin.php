@@ -13,7 +13,7 @@ session_start();
 <?php
     function access (){
         $login = "tunnus";
-        $pass = "salasana123";
+        $pass = "123";
         if(($_POST['login'] == $login) && ($_POST['password'] == $pass)) {
            $_SESSION["access"] = "granted";
             echo "<h1>Onneksi olkoon, pääsit sisään!<h1>";
@@ -24,15 +24,6 @@ session_start();
         }
     }
 
-    function tarkistus (){
-        if (!isset($_SESSION["access"])){
-            echo "<h1>Sisäänkirjautuminen epäonnistui<h1>";
-            echo "<p><a href='login.php'>Palaa takaisin etusivulle</a></p>";
-        } else {
-            echo "<h1>Onneksi olkoon, pääsit sisään!<h1>";
-            echo "<p><a href='admin2.php'>Jatka eteenpäin</a></p>";
-        }
-    }
     access();    
 ?>
 </body>
