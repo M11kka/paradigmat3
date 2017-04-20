@@ -14,7 +14,7 @@ class BankAccount {
     var $accountType;
     
     function accountInfo() {
-        return $this->accountNumber . "<br>" . $this->balance . "<br>" . $this->dateOpened . "<br> " . $this->accountType;
+        return "Account number: " . $this->accountNumber . "<br>" . "Balance: " . $this->balance . "<br>" . "Date opened: " . $this->dateOpened . "<br> " . "Account type: " . $this->accountType;
     }
 }
 $account1 = new BankAccount();
